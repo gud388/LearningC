@@ -59,9 +59,27 @@ int main() {
     cout << "Please enter 2 numbers" << endl;
     cin >> num1;
     cin >> num2;
+    cin >> num3;
+    cin >> num4;
 
-    cout << "The first value is " << num1 << endl;
-    cout << "The second value is " << num2 << endl;
+    long num3 = 3;
+    short num4 = 4;
+
+    // reference pointers
+    long& num_pointer = 10;
+    short& num_pointer = 20;
+
+    cout << " this value is " << num3 << endl;
+    cout << " this reference is " << num3& << endl;
+    cout << " this value is " << num4 << endl;
+    cout << " this reference is " << num4& << endl;
+
+    // &variable  
+    // every variable is a memory location and every memory location has its address defined 
+    // which can be accessed using ampersand (&) operator which denotes an address in memory. 
+
+    cout << "The first value is " << num1 << endl << " at memory location " << &num1 << endl;
+    cout << "The second value is " << num2 << endl << " at memory location " << &num2 << endl;
     
     callingfunc = func_num(num1, num2);
 

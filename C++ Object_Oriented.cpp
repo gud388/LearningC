@@ -72,10 +72,10 @@ int main() {
     int e = powint(dogOne.base, dogOne.exponent);
     std::cout << "pow = " << e << endl;
     volumeSphere = 4/3 * M_PI * e;
-    std::cout << "The volume of sphere 1 is \n\n" << volumeSphere << "cm \n\n";
+    std::cout << "why order of operations is important: \n\n" << volumeSphere << "cm \n\n";
 
-    volumeSphere = 3.14159 * 343 * 4/3;
-    std::cout << "Alterntively sphere 1 is \n\n" << volumeSphere << "cm \n\n";
+    volumeSphere = e * M_PI * 4/3;
+    std::cout << "The volume of sphere 1 is actually: \n\n" << volumeSphere << "cm \n\n";
       
 
 return 0;

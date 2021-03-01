@@ -1,11 +1,12 @@
+// Class Defintions & Objects
+// A class provides the blueprints for objects, so basically an object is created from a class.
+
 #define _USE_MATH_DEFINES
 
 #include <iostream> // input/output
 #include <cstdint> // for std::int_fast64_t
 #include <cmath> // for PI
-
-// Class Defintions & Objects
-// A class provides the blueprints for objects, so basically an object is created from a class.
+#include <bits/stdc++.h> //pow fuction for double
 
 extern int powint(int base, int exponent) { //  exponent must be non-negative
     std::int_fast64_t result{1};
@@ -21,8 +22,8 @@ extern int powint(int base, int exponent) { //  exponent must be non-negative
 
 class Box {
     public:
-    int length, width, height; // demensions of a box
-    double volume, e;
+    double length, width, height; // demensions of a box
+    double volume, e;  // volume of a box
 
     void volumeBox() {
     std::cout << "The volume of a box in cm " << std::endl; 
@@ -35,9 +36,24 @@ class Box {
     }
 };
 
+class Cube {
+    public:
+    double width; // demensions of a cube
+    double volume, e;  // volume of a cube 
+
+    void volumeCube() {
+        std::cout << "Calculating the volume of a Cube in cm \n\n";
+        std::cout << "Enter the width of Cube: "; std::cin >> width;
+        int exponent = 3;
+        int e = pow(width, exponent);
+        volume = e;
+        std::cout << "The volume of this cube is \n\n" << volume << "cm \n\n";
+    }
+};
+
 class Sphere {
     public:
-    int diameter, radius, base; // demensions of a sphere
+    double diameter, radius, base; // demensions of a sphere
     double exponent ,volume , e; // volume of a sphere 
 
     void volumeSphere() {
@@ -47,7 +63,7 @@ class Sphere {
     base = diameter/2;
     std::cout << "The radius is " << base << "cm" << std::endl;
     exponent = 3;
-    e = powint(base, exponent);
+    e = pow(base, exponent);
     volume = 4/3 * M_PI * e;
     std::cout << "why order of operations is important: \n\n" << volume << "cm \n\n";
     volume = e * M_PI * 4/3;
@@ -55,65 +71,25 @@ class Sphere {
     }
 };
 
-class Cylinder {
-    public:
-    int height, diameter, exponent, base; // demensions of a cylinder
-    double volume, e; // volume of a cylinder
-
-    void volumeCylinder() {
-    std::cout << "The volume of a cylinder in cm" << std::endl;
-    std::cout << "Enter the diameter of the cylinder: "; std::cin >> diameter;
-    std::cout << "Enter the height of the cylinder: "; std::cin >> height;
-    base =  diameter/2;
-    exponent = 2;
-    e = powint(base,exponent);
-    volume = M_PI * e * height;
-    std::cout << "The volume of this cylinder is: \n\n" << volume << "cm \n\n";
-    }
-};
-
-class Pyramid {
-    public:
-    double baseLength, baseWidth, height, volume; // demensions of a pyramid
-    
-    void volumePyramid() {
-    std::cout << "The volume of a pyramid in cm" << std::endl;
-    std::cout << "Enter the length of the pyramid: "; std::cin >> baseLength;
-    std::cout << "Enter the width of the pyramid: "; std::cin >> baseWidth;
-    std::cout << "Enter the height of the pyramid: "; std::cin >> height;
-    volume = baseLength*baseWidth*height/3;
-    std::cout << "The volume of this pyramid is: \n\n" << volume << "cm \n\n";
-    }
-};
-
-using namespace std;
-
 int main() {
-    Box voxOne; // declare vox from type Box
-    Box foxTwo; // declare fox from type Box 
-    Sphere dogOne; // declare dog from type Sphere
-    Cylinder catOne; // declare cat from type Cylinder
-    Pyramid head; // declare head from type Pyramid
+    Box boxOne; // declare boxOne from type Box
+    Box boxTwo; // declare boxTwo from type Box
+    Cube cubeThree; // declare cubeThree from type Cube 
+    Sphere sphereFour; // declare sphereFour from type Sphere
 
+    // Box Volume = Length*Width*Height 
     double volumeVox = 0.0; // the volume of Box1
     double volumeFox = 0.0; // the volume of Box2
-    long volumeSphere = 0.0000000; // the volume of Sephere
-    long volumeCylinder = 0.00000;/// the volume of Cylinder
     long e =0.0000; // exponent 
 
     // Box Volume = Length*Width*Height 
-    voxOne.volumeBox();
-    foxTwo.volumeBox();
+    boxOne.volumeBox();
+    boxTwo.volumeBox();
+
+    // Cube Volume = Width(edge)^3
+    cubeThree.volumeCube();
 
     // Sphere Volume = 4/3*Pi*Radius^3
-    dogOne.volumeSphere();
-    
-    // Cylinder  V = Pi*radius^2 * Height
-    catOne.volumeCylinder();
-
-    // V = Base Length * Base Width * Pyramid Height/3
-    head.volumePyramid();
-
-    return 0;
+    sphereFour.volumeSphere();
 
 }

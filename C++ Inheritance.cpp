@@ -3,22 +3,12 @@
 // to as the derived class
 
 #include <iostream> // input/output
+#include <math.h>  // the phantom pain
+#include <tgmath.h> // provides a type-generic macro version of this function.
 #include <cstdint> // for std::int_fast64_t
-#include <bits/stdc++.h> //pow fuction for double
+#include <bits/stdc++.h> // pow fuction for double
 
 using namespace std;
-
-extern int powint(int base, int exponent) { //  exponent must be non-negative
-    std::int_fast64_t result{1};
-    while (exponent){ 
-        if (exponent & 1)
-            result *= base;
-        exponent >>= 1;
-        base *= base;
-    }
- 
-    return result;
-}  
 
 // Base Class
 class Shape {
@@ -64,7 +54,7 @@ class Shape {
         }
 
     protected:
-        long volume; 
+        double volume; 
 };
 
 // Class Box inherits class Shape
@@ -84,10 +74,10 @@ class Box: public Shape {
 class Cube: public Shape {
     public:
     void volumeCube() {
+        double exponent = 3;
         std::cout << "Calculating the volume of a Cube in cm \n\n";
         setWidth();
-        int exponent = 3;
-        int e = powint(width, exponent);
+        double e = pow(this->width, exponent);
         volume = e;
         std::cout << "The volume of this cube is \n\n" << volume << "cm \n\n";
     }
@@ -97,9 +87,9 @@ class Cube: public Shape {
 class Sphere: public Shape {
     public:
     void volumeSphere() {
+        double exponent = 3;
         std::cout << "Calculating the volume of a Sphere in cm \n\n";
         this->radius = setRadius();
-        double exponent = 3;
         double e = pow(this->radius, exponent);
         volume = e * M_PI * 4/3;
         std::cout << "The volume of this sphere is \n\n" << volume << "cm \n\n";
@@ -107,14 +97,14 @@ class Sphere: public Shape {
 };
 
 int main(void) {
-    Box boxOne; // declare boxOne from type Box
-    Box boxTwo; // declare boxTwo from type Box
-    Cube cubeOne; // declare cubeOne from type Cube 
-    Sphere sphereOne; //declare sphereOne from type Sphere 
+    Box boxFour; // declare boxOne from type Box
+    Box boxThree; // declare boxTwo from type Box
+    Cube cubeTwo; // declare cubeThree from type Cube 
+    Sphere sphereOne; //declare sphereFour from type Sphere 
 
-    boxOne.volumeBox();
-    boxTwo.volumeBox();
-    cubeOne.volumeCube();
+    boxFour.volumeBox();
+    boxThree.volumeBox();
+    cubeTwo.volumeCube();
     sphereOne.volumeSphere();
 
     return 0;

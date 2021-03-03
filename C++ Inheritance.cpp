@@ -4,6 +4,7 @@
 
 #include <iostream> // input/output
 #include <cstdint> // for std::int_fast64_t
+#include <bits/stdc++.h> //pow fuction for double
 
 using namespace std;
 
@@ -26,23 +27,40 @@ class Shape {
     double length; 
     double width;
     double height;
+    double diameter;
+    double radius;
+    double exponent;
+    double answer; 
 
         double setLength() {
             std::cout << "Enter the length: "; std::cin >> length;
-            //length = l;
+            std::cout << "The length is " << length << "cm" << std::endl;
             return length;
         }
 
         double setWidth() {
             std::cout << "Enter the width: "; std::cin >> width;
-            //width = w;
+            std::cout << "The width is " << width << "cm" << std::endl;
             return width;
         }
 
         double setHeight() {
             std::cout << "Enter the height: "; std::cin >> height;
-            //height = h;
+            std::cout << "The height is " << height << "cm" << std::endl;
             return height;
+        }
+
+        double setRadius() {
+            std::cout << "Enter the diameter of the sphere: "; std::cin >> diameter;
+            double radius = diameter/2;
+            std::cout << "The radius is " << radius << "cm" << std::endl;
+            return radius; 
+        }
+
+        double calPower(double radius) { 
+            exponent = 3;
+            answer = pow(radius, exponent);
+            return answer;
         }
 
     protected:
@@ -75,14 +93,29 @@ class Cube: public Shape {
     }
 };
 
+//Class Sphere inherits class Shape
+class Sphere: public Shape {
+    public:
+    void volumeSphere() {
+        std::cout << "Calculating the volume of a Sphere in cm \n\n";
+        this->radius = setRadius();
+        double exponent = 3;
+        double e = pow(this->radius, exponent);
+        volume = e * M_PI * 4/3;
+        std::cout << "The volume of this sphere is \n\n" << volume << "cm \n\n";
+    }
+};
+
 int main(void) {
     Box boxOne; // declare boxOne from type Box
     Box boxTwo; // declare boxTwo from type Box
-    Cube cubeOne; // declare cubeOne from type Box 
+    Cube cubeOne; // declare cubeOne from type Cube 
+    Sphere sphereOne; //declare sphereOne from type Sphere 
 
     boxOne.volumeBox();
     boxTwo.volumeBox();
     cubeOne.volumeCube();
+    sphereOne.volumeSphere();
 
     return 0;
 }

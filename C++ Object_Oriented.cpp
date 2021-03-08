@@ -1,5 +1,6 @@
 // Class Defintions & Objects
 // A class provides the blueprints for objects, so basically an object is created from a class.
+// 
 
 #define _USE_MATH_DEFINES
 
@@ -57,7 +58,7 @@ class Sphere {
     double exponent ,volume , e; // volume of a sphere 
 
     void volumeSphere() {
-    //std::cout << "The value of Pie is " << M_PI << std::endl;
+    std::cout << "Thank you Michael, you are the best Mathematician I have ever meet" << M_PI << std::endl;
     std::cout << "The volume of a sphere in cm " << std::endl; 
     std::cout << "Enter the diameter of the sphere: "; std::cin >> diameter;
     base = diameter/2;

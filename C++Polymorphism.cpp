@@ -1,6 +1,7 @@
-// Inheritance allows us to define a class in terms of another class, 
-// The existing class is called the base class, and the new class is referred 
-// to as the derived class
+// polymorphism occurs when there is a hierarchy of classes and they are related by inheritance.
+// C++ polymorphism means that a call to a member function will cause a different function 
+// to be executed depending on the type of object that invokes the function.
+// 
 
 #include <iostream> // input/output
 #include <math.h>   
@@ -12,16 +13,10 @@ using namespace std;
 
 // Base Class
 class Shape {
+    protected:
+            double volume, length, width, height, diameter, radius, exponent, answer; 
+
     public:
-
-    double length; 
-    double width;
-    double height;
-    double diameter;
-    double radius;
-    double exponent;
-    double answer; 
-
         double setLength() {
             std::cout << "Enter the length: "; std::cin >> length;
             std::cout << "The length is " << length << "cm" << std::endl;
@@ -53,18 +48,22 @@ class Shape {
             return answer;
         }
 
-    protected:
-        double volume; 
-};
+        double calVolume(double length, double width, double height) {
+            std::cout << "Parent Class volume \n\n";
+            return 0;
+        };
+    };
 
 // Class Box inherits class Shape
 class Box: public Shape {
     public:
-    void volumeBox() {
-        std::cout << "Calculating the volume of a Box in cm \n\n";
+    void BoxDimensions() {
         setLength();
         setWidth();
         setHeight();
+        
+    double calVolume(double length, double width, double height) {
+        std::cout << "Calculating the volume of a Box in cm \n\n";
         volume = length * width * height; 
         std::cout << "The volume of this box is \n\n" << volume << "cm \n\n";
     }

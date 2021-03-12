@@ -1,6 +1,5 @@
 // Class Defintions & Objects
 // A class provides the blueprints for objects, so basically an object is created from a class.
-// 
 
 #define _USE_MATH_DEFINES
 

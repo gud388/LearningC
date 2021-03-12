@@ -96,10 +96,10 @@ class Sphere: public Shape {
 };
 
 int main(void) {
-    Box boxFour; // declare boxOne from type Box
-    Box boxThree; // declare boxTwo from type Box
-    Cube cubeTwo; // declare cubeThree from type Cube 
-    Sphere sphereOne; //declare sphereFour from type Sphere 
+    Box boxOne; 
+    Box boxTwo; 
+    Cube cubeOne; 
+    Sphere sphereOne;  
 
     boxFour.volumeBox();
     boxThree.volumeBox();

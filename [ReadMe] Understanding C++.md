@@ -15,7 +15,19 @@ C++ was  orginally designed in 1985, by the Danish computer scientist Bjarne Str
 # Table of Contents 
 [TOC]
 
-# Input/Output
+# C++Basics.cpp 
+## Basic Syntax in C++
+## Data Types in C++
+## Variable Types & Scope in C++
+## Constants/Literals in C++
+## Modifier Types in C++
+## Storage Classes in C++
+## Operators in C++
+## Strings in C++
+## Pointers in C++
+## References in C++
+## Data Structures in C++
+## Input/Output in C++
 
 **<iostream>**
 This file defines the following input stream objects
@@ -28,17 +40,17 @@ This file defines the following input stream objects
 | un-buffered standard error | ``cerr`` |
 | buffered standard error    | ``clog`` |
 
-
 **<iomanip>**
 This file declares services useful for performing formatted I/O with so-called parameterized stream manipulators, such as setw and setprecision.
 
 **<fstream>**
 This file declares services for user-controlled file processing. We will discuss about it in detail in File and Stream related chapter.
 
-# Functions
+# C++Basic_Functions.cpp
+## Defining a Function
 A function is known with various names like a method or a sub-routine or a procedure
 
-## Defining a Function
+## Implementing a function in C++
 The standard form of a C++ function is defined as the following 
 
 ``` c++=
@@ -58,7 +70,6 @@ Here are all the parts of a function
 
 **Function Body** − contains a collection of statements that define what the function does.
 
-## 
 Is a file containg a small program to help with the understanding of input and output and c++ functions
 ``` c++ 
 func_num(int num1, int num2)
@@ -74,15 +85,65 @@ func_greatest_common_factor(int num1, int num2)```
 
 [What is a Common Facotor?](https://www.mathsisfun.com/greatest-common-factor.htmlhttps://www.mathsisfun.com/greatest-common-factor.html)
 
-# Object Oriented Programming C++
+# C++Object_Oriented.cpp
+## Defining Object-oriented Programming in C++
+[Object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming)
+Their are two important concepts in Object-oriented Programming Classes and Objects.A **class** provides the blueprints for **objects**, so basically an object is created from a class.
 
-## Namspaces
+## Implementing Object-oriented Programming - Class & Objects  in C++
+### Classes in C++
+1. A class definition starts with the keyword ```class```
+2. followed by the class name; 
+3. and the class body, enclosed by a pair of curly braces. A class definition must be followed either by a semicolon or a list of declarations. 
 
+An example:
+``` C++
+class Sphere {
+    public:
+    double diameter, radius, base; // demensions of a sphere
+    double exponent ,volume , e; // volume of a sphere 
+    }
+};
+```
+The keyword ```public``` determines the access attributes of the members of the class that follows it. 
+A ```public``` member can be accessed from outside the class anywhere within the scope of the class object. 
+A ```private``` member  
+A ```protected`` member 
+
+### Objects in C++
+
+# C++Inheritance.cpp
+## Defining Inheritance in C++
+[Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming) Is where a class **(derived class)** is define in terms of another class **(base class)**. Inheritance makes it easier to reuse the code.
+
+## Access Control and Inheritance in C++
+A **derived class** can access all the **non-private members** of its **base class**. Base-class members should not be accessible to the member functions of derived classes should be declared private in the base class.
+
+| Access        |  Public     | Protected | Private  |
+|-------------  | ----------- |-----------|----------|
+| Same Class    | Yes         |  Yes      | Yes      |
+| Derived Class | Yes         |  Yes      | No       |       
+| Outside Class | Yes         |  No       | No       |
+
+## Type of Inheritance
+Deriving a class from a base class, the base class may be inherited through ```public```, ```protected``` or ```private``` inheritance. The type of inheritance is specified by the access-specifier as explained above.
+
+   **Public Inheritance** 
+   Deriving a class from a ```public``` **base class**, ```public``` members of the **base class** become ```public``` members of the **derived class** and ```protected``` members of the **base class** become ```protected``` members of the **derived class**. A **base class** ```private``` members are never accessible directly from a **derived class**, but can be accessed through calls to the ```public``` and ```protected``` members of the **base class**.
+
+   **Protected Inheritance**
+   Deriving from a **protected base class**, ```public``` and ```protected``` members of the **base class** become ```protected``` members of the **derived class**.
+
+   **Private Inheritance** 
+   Deriving from a ```private``` **base class**, ```public``` and ```protected``` members of the **base class*** become ```private``` members of the **derived class**.
+
+# C++Namspaces.cpp
+## Defining a Namespace in C++
 A namespace is designed to overcome the situation when a compiler must differiate between a function foo() that might also have the same name from another library also called foo(). Using namespaces, you can define the context in which names are defined. In essence, a namespace defines a scope.
+implmenting 
 
-### Defining a Namespace
-
-A namespace is defined as the following:
+## Implementing Namespace in C++
+A namespace is implemented as the following:
 
 ``` C++
 namespace namespace_name {
@@ -91,9 +152,16 @@ namespace namespace_name {
 ```
 To call the namespace either function or variable, prepend (::) the namespace name as the following
 
-```C++
+``` C++
 name::code; // .
 ```
+
+# C++Polymorphism.cpp
+[Polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science) is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types.
+
+## Defining Polymorphism in C++
+
+## Virtual Functions in C++
 
 # C++ Versions
 https://en.cppreference.com/w/cpp
